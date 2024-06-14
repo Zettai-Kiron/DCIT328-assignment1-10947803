@@ -1,0 +1,38 @@
+using System;
+
+namespace MovieTheaterTicketPrice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Prompt the user to enter their age
+            Console.Write("Enter your age: ");
+            string input = Console.ReadLine();
+
+            // Attempt to parse the input to an integer
+            if (int.TryParse(input, out int age))
+            {
+                // Determine the ticket price based on age
+                int ticketPrice;
+
+                if (age <= 12 || age >= 65)
+                {
+                    ticketPrice = 7;
+                }
+                else
+                {
+                    ticketPrice = 10;
+                }
+
+                // Display the ticket price
+                Console.WriteLine($"The ticket price is: GHC{ticketPrice}");
+            }
+            else
+            {
+                // Handle invalid input that cannot be parsed to an integer
+                Console.WriteLine("Invalid input. Please enter a valid age.");
+            }
+        }
+    }
+}
